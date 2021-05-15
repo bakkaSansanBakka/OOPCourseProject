@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CourseProj.Images">
+    <Style x:Key="Logoimage" TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+
+                    <Viewbox Width="200" Height="200" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                        <Canvas Height="200" Width="200">
+                            <Path Data="M 717.210938 270.679688 L 671.316406 196.730469 L 482.015625 196.730469 L 438.035156 270.679688 L 581.445313 428.859375 L 717.210938 270.679688 " />
+                            <Path Data="M 672.820313 362.246094 L 609.636719 426.023438 C 738.910156 436.445313 840.871094 543.214844 840.871094 672.96875 C 840.871094 809.601563 727.820313 920.761719 588.863281 920.761719 C 449.90625 920.761719 336.855469 809.601563 336.855469 672.96875 C 336.855469 549.542969 429.109375 446.917969 549.375 428.226563 L 491.144531 366.152344 C 358.445313 407.105469 261.910156 529.15625 261.910156 672.96875 C 261.910156 850.234375 408.578125 994.453125 588.863281 994.453125 C 769.148438 994.453125 915.816406 850.234375 915.816406 672.96875 C 915.816406 524.230469 812.554688 398.78125 672.820313 362.246094 " />
+                        </Canvas>
+                    </Viewbox>
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

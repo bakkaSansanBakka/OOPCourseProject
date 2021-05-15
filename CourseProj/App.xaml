@@ -1,0 +1,63 @@
+﻿<Application x:Class="CourseProj.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CourseProj"
+             xmlns:viewModel="clr-namespace:CourseProj.MVVM.ViewModels"
+             xmlns:view="clr-namespace:CourseProj.MVVM.Views">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/MenuExitTheme.xaml"/>
+                <ResourceDictionary Source="Themes/SelectedMenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/SearchButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/TextThemes.xaml"/>
+                <ResourceDictionary Source="Themes/ButtonsThemes.xaml"/>
+                <ResourceDictionary Source="Themes/ComboBoxThemes.xaml"/>
+                <ResourceDictionary Source="Themes/CardValidityTextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Images/ImageResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:LogInViewModel}">
+                <view:LogInView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:RegisteryViewModel}">
+                <view:RegisteryView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:StoreClientViewModel}">
+                <view:StoreClientView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:RepairClientViewModel}">
+                <view:RepairClientView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ItemInfoClientViewModel}">
+                <view:ItemInfoClientView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:OrderClientViewModel}">
+                <view:OrderClientView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ContactsViewModel}">
+                <view:ContactsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:OrdersClientViewModel}">
+                <view:OrdersClientView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:StoreAdminViewModel}">
+                <view:StoreAdminView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:OrdersAdminViewModel}">
+                <view:OrdersAdminView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

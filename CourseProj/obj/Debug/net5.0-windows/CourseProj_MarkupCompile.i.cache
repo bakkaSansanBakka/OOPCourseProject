@@ -1,0 +1,20 @@
+﻿CourseProj
+1.0.0.0
+
+winexe
+C#
+.cs
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\CourseProj\CourseProj\obj\Debug\net5.0-windows\
+CourseProj
+none
+false
+TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\CourseProj\CourseProj\App.xaml
+20-829602003
+
+48-379199487
+367762183766
+Images\ImageResource.xaml;MainWindow.xaml;MVVM\Views\ContactsView.xaml;MVVM\Views\ItemInfoClientView.xaml;MVVM\Views\LogInView.xaml;MVVM\Views\OrderClientView.xaml;MVVM\Views\OrdersAdminView.xaml;MVVM\Views\OrdersClientView.xaml;MVVM\Views\RegisteryView.xaml;MVVM\Views\RepairClientView.xaml;MVVM\Views\StoreAdminView.xaml;MVVM\Views\StoreClientView.xaml;Themes\ButtonsThemes.xaml;Themes\CardValidityTextBoxTheme.xaml;Themes\ComboBoxThemes.xaml;Themes\MenuButtonTheme.xaml;Themes\MenuExitTheme.xaml;Themes\SearchButtonTheme.xaml;Themes\SelectedMenuButtonTheme.xaml;Themes\TextThemes.xaml;
+
+False
+
