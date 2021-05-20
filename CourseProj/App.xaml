@@ -16,6 +16,8 @@
                 <ResourceDictionary Source="Themes/ComboBoxThemes.xaml"/>
                 <ResourceDictionary Source="Themes/CardValidityTextBoxTheme.xaml"/>
                 <ResourceDictionary Source="Images/ImageResource.xaml"/>
+                <ResourceDictionary Source="Themes/ConverterResources.xaml"/>
+                <ResourceDictionary Source="Themes/ListViewThemes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:LogInViewModel}">
@@ -56,6 +58,10 @@
 
             <DataTemplate DataType="{x:Type viewModel:OrdersAdminViewModel}">
                 <view:OrdersAdminView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:JewelryItemViewModel}">
+                <view:JewelryItemView/>
             </DataTemplate>
 
         </ResourceDictionary>

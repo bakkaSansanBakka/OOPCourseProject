@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using CourseProj.Core;
 using CourseProj.MVVM.ViewModels.Base;
+using CourseProj.Repositories;
 
 namespace CourseProj.MVVM.ViewModels
 {
@@ -18,14 +19,14 @@ namespace CourseProj.MVVM.ViewModels
         public ICommand NavigateToRepairCommand { get; }
         public ICommand NavigateToItemInfoClientCommand { get; }
 
-        public OrderClientViewModel(NavigationStore navigationStore)
+        public OrderClientViewModel(NavigationStore navigationStore, AuthenticationStore authenticationStore, UnitOfWorkFactory unitOfWorkFactory)
         {
-            NavigateToExitCommand = new NavigateCommand<LogInViewModel>(navigationStore, () => new LogInViewModel(navigationStore));
-            NavigateToContactsCommand = new NavigateCommand<ContactsViewModel>(navigationStore, () => new ContactsViewModel(navigationStore));
-            NavigateToOrdersClientCommand = new NavigateCommand<OrdersClientViewModel>(navigationStore, () => new OrdersClientViewModel(navigationStore));
-            NavigateToStoreClientCommand = new NavigateCommand<StoreClientViewModel>(navigationStore, () => new StoreClientViewModel(navigationStore));
-            NavigateToRepairCommand = new NavigateCommand<RepairClientViewModel>(navigationStore, () => new RepairClientViewModel(navigationStore));
-            NavigateToItemInfoClientCommand = new NavigateCommand<ItemInfoClientViewModel>(navigationStore, () => new ItemInfoClientViewModel(navigationStore));
+            NavigateToExitCommand = new NavigateCommand<LogInViewModel>(navigationStore, () => new LogInViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            NavigateToContactsCommand = new NavigateCommand<ContactsViewModel>(navigationStore, () => new ContactsViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            NavigateToOrdersClientCommand = new NavigateCommand<OrdersClientViewModel>(navigationStore, () => new OrdersClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            NavigateToStoreClientCommand = new NavigateCommand<StoreClientViewModel>(navigationStore, () => new StoreClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            NavigateToRepairCommand = new NavigateCommand<RepairClientViewModel>(navigationStore, () => new RepairClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            NavigateToItemInfoClientCommand = new NavigateCommand<ItemInfoClientViewModel>(navigationStore, () => new ItemInfoClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
         }
     }
 }

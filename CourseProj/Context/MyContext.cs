@@ -14,7 +14,7 @@ namespace CourseProj.Context
         {
             //LAPTOP-JA53F0CF
             optionsBuilder.UseSqlServer(
-                @"Data Source=LAPTOP-JA53F0CF;Initial Catalog=JewelryStoreDB;Integrated Security=True;Trusted_Connection=True;");
+                @"Data Source=LAPTOP-JA53F0CF;Initial Catalog=JewelryStoreDB;Integrated Security=True;");
         }
 
         public DbSet<User> Users { get; set; }
@@ -25,26 +25,48 @@ namespace CourseProj.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
+                .Entity<User>()
+                .HasMany(p => p.JewelryOrders)
+                .WithOne(e => e.User)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder
+                .Entity<JewelryItem>()
+                .HasMany(p => p.JewelryOrders)
+                .WithOne(e => e.JewelryItem)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
+            modelBuilder
+                .Entity<Delivery>()
+                .HasMany(p => p.JewelryOrders)
+                .WithOne(e => e.Delivery)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder
                 .Entity<JewelryOrder>()
-                .HasKey(t => new { t.JewelryItemId, t.DeliveryId, t.UserId });
+                .HasKey(t => new { t.Id, t.JewelryItemId, t.DeliveryId, t.UserId });
 
             modelBuilder
                 .Entity<JewelryOrder>()
                 .HasOne(pr => pr.JewelryItem)
                 .WithMany(s => s.JewelryOrders)
-                .HasForeignKey(pr => pr.JewelryItemId);
+                .HasForeignKey(pr => pr.JewelryItemId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder
                 .Entity<JewelryOrder>()
                 .HasOne(pr => pr.Delivery)
                 .WithMany(s => s.JewelryOrders)
-                .HasForeignKey(pr => pr.DeliveryId);
+                .HasForeignKey(pr => pr.DeliveryId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder
                .Entity<JewelryOrder>()
                .HasOne(pr => pr.User)
                .WithMany(s => s.JewelryOrders)
-               .HasForeignKey(pr => pr.UserId);
+               .HasForeignKey(pr => pr.UserId)
+               .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

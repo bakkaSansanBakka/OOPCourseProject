@@ -10,7 +10,7 @@ using EntityState = Microsoft.EntityFrameworkCore.EntityState;
 
 namespace CourseProj.Repositories
 {
-    public class JewelryItemRepository : IRepositoryAsync<JewelryItem>
+    public class JewelryItemRepository : IRepository<JewelryItem>
     {
         private readonly MyContext db;
 
@@ -24,9 +24,9 @@ namespace CourseProj.Repositories
             return db.JewelryItems;
         }
 
-        public async Task<JewelryItem> Get(int id)
+        public JewelryItem Get(int id)
         {
-            return await db.JewelryItems.FindAsync(id);
+            return db.JewelryItems.First(j => j.Id == id);
         }
 
         public void Create(JewelryItem item)

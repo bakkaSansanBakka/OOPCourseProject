@@ -19,17 +19,18 @@ namespace CourseProj.MVVM.Model
     public class User : Item
     {
         public string UserName { get; set; }
-        public string Password { get; set; }
+        public string HashedPassword { get; set; }
+        public string Salt { get; set; }
         public string Email { get; set; }
         public UserType UserType { get; set; }
         public IList<JewelryOrder> JewelryOrders { get; set; }
 
         public User() { }
 
-        public User(int id, string userName, string password, string email, UserType userType) : base(id)
+        public User(int id, string userName, string hashedPassword, string email, UserType userType) : base(id)
         {
             UserName = userName;
-            Password = password;
+            HashedPassword = hashedPassword;
             Email = email;
             UserType = userType;
         }

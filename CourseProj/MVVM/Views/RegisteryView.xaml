@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CourseProj.MVVM.Views"
+             xmlns:local="clr-namespace:CourseProj.MVVM.Views"             
+             xmlns:uscontr="clr-namespace:CourseProj.UserControls" 
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="920">
     <Grid>
@@ -11,7 +12,8 @@
             <ColumnDefinition Width="130"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="117.377"/>
+            <ColumnDefinition Width="12.623"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -31,7 +33,7 @@
                 Width="120"
                 Grid.Column="0"
                 Grid.Row="0"
-                Margin="10,0,0,0"
+                Margin="10,18,0,17"
                 Command="{Binding NavigateBackCommand}"
                 Style="{StaticResource buttonStyle}"/>
 
@@ -58,7 +60,8 @@
                  Grid.Row="2"
                  Height="40"
                  Width="210"
-                 Style="{StaticResource textBoxStyle}"/>
+                 Text="{Binding UserName}"
+                 Style="{StaticResource textBoxStyle}" Margin="60,18,60,17"/>
 
         <TextBlock Text="Электронная почта"
                    TextAlignment="Right"
@@ -83,14 +86,23 @@
                  Grid.Row="3"
                  Height="40"
                  Width="210"
-                 Style="{StaticResource textBoxStyle}"/>
+                 Style="{StaticResource textBoxStyle}"
+                 Text="{Binding Email}" Margin="60,17,60,18"/>
 
-        <TextBox FontSize="24"
-                 Grid.Column="2"
-                 Grid.Row="4"
-                 Height="40"
-                 Width="210"
-                 Style="{StaticResource textBoxStyle}"/>
+        <Border Grid.Row="4"
+                Grid.Column="2"
+                BorderThickness="0.3"
+                BorderBrush="Black"
+                Width="210"
+                Height="40">
+            <uscontr:BindableWatermarkPasswordBox x:Name="PasswordTextBox"
+                                              Width="210"
+                                              Height="40"
+                                              FontSize="24"
+                                              BorderThickness="1"
+                                              Foreground="Indigo"
+                                         Password="{Binding Password}"/>
+        </Border>
 
         <TextBlock Text="Повторите пароль"
                    TextAlignment="Right"
@@ -101,13 +113,21 @@
                    Margin="0,0,20,0"
                    Style="{StaticResource textBlockStyle}"/>
 
-        <TextBox FontSize="24"
-                 Grid.Column="2"
-                 Grid.Row="5"
-                 Height="40"
-                 Width="210"
-                 Style="{StaticResource textBoxStyle}"/>
-
+        <Border Grid.Row="5"
+                Grid.Column="2"
+                BorderThickness="0.3"
+                BorderBrush="Black"
+                Width="210"
+                Height="40">
+            <uscontr:BindableWatermarkPasswordBox x:Name="ConfirmPasswordTextBox"
+                                              Width="210"
+                                              Height="40"
+                                              FontSize="24"
+                                              BorderThickness="1"
+                                              Foreground="Indigo"
+                                         Password="{Binding ConfirmPassword}"/>
+        </Border>
+        
         <Button Content="Зарегистрироваться"
                 FontSize="22"
                 Height="40"
@@ -115,8 +135,8 @@
                 Grid.Column="1"
                 Grid.Row="6"
                 Grid.ColumnSpan="2"
-                Command="{Binding NavigateToStoreClientCommand}"
-                Style="{StaticResource buttonStyle}"/>
+                Command="{Binding RegisterUserCommand}"
+                Style="{StaticResource buttonStyle}" Margin="210,18,210,17"/>
 
     </Grid>
 </UserControl>

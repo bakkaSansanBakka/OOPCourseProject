@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using CourseProj.Core;
 using CourseProj.MVVM.ViewModels.Base;
+using CourseProj.Repositories;
 
 namespace CourseProj.MVVM.ViewModels
 {
@@ -14,10 +15,10 @@ namespace CourseProj.MVVM.ViewModels
         public ICommand NavigateToExitCommand { get; }
         public ICommand NavigateToStoreAdminCommand { get; }
 
-        public OrdersAdminViewModel(NavigationStore navigationStore)
+        public OrdersAdminViewModel(NavigationStore navigationStore, AuthenticationStore authenticationStore, UnitOfWorkFactory unitOfWorkFactory)
         {
-            NavigateToExitCommand = new NavigateCommand<LogInViewModel>(navigationStore, () => new LogInViewModel(navigationStore));
-            NavigateToStoreAdminCommand = new NavigateCommand<StoreAdminViewModel>(navigationStore, () => new StoreAdminViewModel(navigationStore));
+            NavigateToExitCommand = new NavigateCommand<LogInViewModel>(navigationStore, () => new LogInViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            NavigateToStoreAdminCommand = new NavigateCommand<StoreAdminViewModel>(navigationStore, () => new StoreAdminViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
         }
     }
 }

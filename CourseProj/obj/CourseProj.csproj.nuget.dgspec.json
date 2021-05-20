@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\CourseProj\\CourseProj\\CourseProj.csproj": {}
+    "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\OOPCourseProject\\CourseProj\\CourseProj.csproj": {}
   },
   "projects": {
-    "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\CourseProj\\CourseProj\\CourseProj.csproj": {
+    "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\OOPCourseProject\\CourseProj\\CourseProj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\CourseProj\\CourseProj\\CourseProj.csproj",
+        "projectUniqueName": "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\OOPCourseProject\\CourseProj\\CourseProj.csproj",
         "projectName": "CourseProj",
-        "projectPath": "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\CourseProj\\CourseProj\\CourseProj.csproj",
+        "projectPath": "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\OOPCourseProject\\CourseProj\\CourseProj.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\CourseProj\\CourseProj\\obj\\",
+        "outputPath": "E:\\2 курс\\2 семестр\\OOP 2\\курсач\\CourseProject\\OOPCourseProject\\CourseProj\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -50,6 +50,10 @@
             "EntityFramework.ru": {
               "target": "Package",
               "version": "[6.2.0, )"
+            },
+            "JetBrains.Annotations": {
+              "target": "Package",
+              "version": "[2021.1.0, )"
             },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",

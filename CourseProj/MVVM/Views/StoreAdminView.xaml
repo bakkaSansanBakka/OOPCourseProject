@@ -9,8 +9,8 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="380"/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="130"/>
         </Grid.ColumnDefinitions>
 
@@ -40,7 +40,7 @@
                    FontSize="20"
                    Margin="120,30,0,0"/>
 
-        <Button Content="Магазин"
+        <Button Content="Каталог"
                      Grid.Column="0"
                      Grid.Row="1"
                      FontSize="24"
@@ -61,49 +61,69 @@
                 Style="{StaticResource MenuExitTheme}" 
                 Command="{Binding NavigateToExitCommand}"/>
 
-        <Button Content="Картинка"
+        <TextBox Width="200"
+                 Height="45"
+                 Grid.Column="2"
+                 Grid.ColumnSpan="2"
+                 Grid.Row="0"
+                 VerticalContentAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Margin="10"
+                 Style="{StaticResource SearchButton}"/>
+        
+        <!--<Button Content="Удалить"
                 Grid.Column="2"
                 Grid.ColumnSpan="2"
-                Grid.Row="0"
+                Grid.Row="1"
                 Height="45"
                 Width="190"
                 FontSize="20"
+                Command="{Binding DelteSelectedItemCommand}"
+                CommandParameter="{Binding SelectedItem}"
+                Style="{StaticResource buttonStyle}"/>-->
+
+        <!--<Button Content="Изменить"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="2"
+                Height="45"
+                Width="190"
+                FontSize="20"
+                Command="{Binding NavigateToEditItemCommand}"
+                CommandParameter="{Binding SelectedItem}"
+                Style="{StaticResource buttonStyle}"/>-->
+
+
+        <Button Content="Добавить"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="3"
+                Height="45"
+                Width="190"
+                FontSize="20"
+                Command="{Binding NavigateToAddItemCommand}"
                 Style="{StaticResource buttonStyle}"/>
 
-        <TextBlock Text="Описание"
-                   Grid.Column="2"
-                   Grid.ColumnSpan="2"
-                   Grid.Row="1"
-                   FontSize="22"
-                   TextAlignment="Center"
-                   VerticalAlignment="Center"
-                   Margin="20,0,20,0"
-                   Foreground="Indigo"/>
-
-        <TextBox Grid.Column="2"
-                 Grid.ColumnSpan="2"
-                 Grid.Row="2"
-                 Grid.RowSpan="2"
-                 Margin="10"
-                 TextWrapping="Wrap"
-                 FontSize="20"
-                 Style="{StaticResource textBoxStyle}"/>
-
-        <TextBlock Text="Цена"
-                   Grid.Column="2"
-                   Grid.Row="4"
-                   FontSize="22"
-                   TextAlignment="Right"
-                   VerticalAlignment="Center"
-                   Margin="20,0,20,0"
-                   Foreground="Indigo"/>
-
-        <TextBox Grid.Column="3"
-                 Grid.Row="4"
-                 Margin="10"
-                 Height="45"
-                 FontSize="20"
-                 Style="{StaticResource textBoxStyle}"/>
-
+        <ScrollViewer x:Name="VerticalScrollBar"
+                      Grid.Column="1"
+                      Grid.RowSpan="8"
+                      VerticalScrollBarVisibility="Auto"
+                      Margin="10">
+            <ListView Background="LavenderBlush"
+                      x:Name="ItemsList"
+                      ItemsSource="{Binding Path=JewelryItemsList}"
+                      HorizontalContentAlignment="Stretch"
+                      BorderThickness="0"
+                      MouseWheel="VerticalScrollBar_OnMouseWheel" 
+                      LostFocus="ItemsList_OnLostFocus"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                <ListView.Resources>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Template" Value="{StaticResource JewelryItemsListViewTemplate}"/>
+                    </Style>
+                </ListView.Resources>
+            </ListView>
+        </ScrollViewer>
+        
     </Grid>
 </UserControl>

@@ -4,6 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CourseProj.MVVM.Views"
+             xmlns:uscontr="clr-namespace:CourseProj.UserControls" 
+             xmlns:viewmodels="clr-namespace:CourseProj.MVVM.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:LogInViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="920">
     <Grid>
@@ -52,18 +55,28 @@
                    Style="{StaticResource textBlockStyle}"/>
 
         <TextBox FontSize="24"
+                 Text="{Binding UserName}"
                  Grid.Column="2"
                  Grid.Row="2"
                  Height="40"
                  Width="210"
                  Style="{StaticResource textBoxStyle}"/>
 
-        <TextBox FontSize="24"
-                 Grid.Column="2"
-                 Grid.Row="3"
-                 Height="40"
-                 Width="210"
-                 Style="{StaticResource textBoxStyle}"/>
+        <Border Grid.Row="3"
+                Grid.Column="2"
+                BorderThickness="0.3"
+                BorderBrush="Black"
+                Width="210"
+                Height="40">
+            <uscontr:BindableWatermarkPasswordBox x:Name="PasswordTextBox"
+                                              Width="210"
+                                              Height="40"
+                                              FontSize="24"
+                                              BorderThickness="1"
+                                              Foreground="Indigo"
+                                         Password="{Binding Password}"/>
+        </Border>
+        
 
         <Button Content="Войти"
                 FontSize="22"
@@ -72,7 +85,7 @@
                 Grid.Column="1"
                 Grid.Row="4"
                 Grid.ColumnSpan="2"
-                Command="{Binding NavigateToStoreClientCommand}"
+                Command="{Binding LoginCommand}"
                 Style="{StaticResource buttonStyle}"/>
 
         <Button Content="Регистрация"
