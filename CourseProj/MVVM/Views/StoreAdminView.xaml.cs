@@ -25,7 +25,12 @@ namespace CourseProj.MVVM.Views
             InitializeComponent();
         }
 
-        private void VerticalScrollBar_OnMouseWheel(object sender, MouseWheelEventArgs e)
+        private void ItemsList_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            ItemsList.SelectedItem = null;
+        }
+
+        private void VerticalScrollBar_OnPreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             ScrollViewer scroll =
                 (sender as ListView).Parent as ScrollViewer;
@@ -34,11 +39,6 @@ namespace CourseProj.MVVM.Views
                 scroll.LineDown();
             else
                 scroll.LineUp();
-        }
-
-        private void ItemsList_OnLostFocus(object sender, RoutedEventArgs e)
-        {
-            ItemsList.SelectedItem = null;
         }
     }
 }

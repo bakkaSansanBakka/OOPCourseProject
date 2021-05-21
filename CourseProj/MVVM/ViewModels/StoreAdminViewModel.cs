@@ -110,8 +110,11 @@ namespace CourseProj.MVVM.ViewModels
 
             DelteSelectedItemCommand = new RelayCommand(DeleteSelectedItemExecute, DeleteSelectedItemCanExecute);   
 
-            NavigateToExitCommand = new NavigateCommand<LogInViewModel>(navigationStore, () => new LogInViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
-            NavigateToOrdersAdminCommand = new NavigateCommand<OrdersAdminViewModel>(navigationStore, () => new OrdersAdminViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            NavigateToExitCommand = new NavigateCommand<LogInViewModel>(navigationStore, 
+                () => new LogInViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+
+            NavigateToOrdersAdminCommand = new NavigateCommand<OrdersAdminViewModel>(navigationStore, 
+                () => new OrdersAdminViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
 
             NavigateToAddItemCommand = new NavigateCommand<JewelryItemViewModel>(navigationStore,
                 () => new JewelryItemViewModel(navigationStore, authenticationStore, unitOfWorkFactory, ItemOperationType.Add));

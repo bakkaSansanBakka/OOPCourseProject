@@ -26,7 +26,7 @@ namespace CourseProj.MVVM.ViewModels
             NavigateToOrdersClientCommand = new NavigateCommand<OrdersClientViewModel>(navigationStore, () => new OrdersClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
             NavigateToStoreClientCommand = new NavigateCommand<StoreClientViewModel>(navigationStore, () => new StoreClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
             NavigateToRepairCommand = new NavigateCommand<RepairClientViewModel>(navigationStore, () => new RepairClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
-            NavigateToItemInfoClientCommand = new NavigateCommand<ItemInfoClientViewModel>(navigationStore, () => new ItemInfoClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            //NavigateToItemInfoClientCommand = new NavigateCommand<ItemInfoClientViewModel>(navigationStore, () => new ItemInfoClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
         }
     }
 }

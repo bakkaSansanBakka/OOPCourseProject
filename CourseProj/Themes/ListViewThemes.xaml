@@ -12,9 +12,9 @@
                 Height="200">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
@@ -26,7 +26,7 @@
                 <Image Grid.Row="0"
                        Grid.RowSpan="3"
                        Grid.Column="0"
-                       Width="100"
+                       Width="200"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        Margin="0,0,5,0"
@@ -41,7 +41,7 @@
                            FontSize="16"
                            Text="{Binding Path=JewelryName}"/>
 
-                <ScrollViewer Grid.Row="2"
+                <!--<ScrollViewer Grid.Row="2"
                               Grid.Column="1"
                               Grid.RowSpan="2"
                               VerticalScrollBarVisibility="Auto" 
@@ -53,7 +53,15 @@
                                HorizontalAlignment="Center"
                                TextWrapping="Wrap"
                                Text="{Binding Path=Description}"/>
-                </ScrollViewer>
+                </ScrollViewer>-->
+
+                <TextBlock Grid.Row="1"
+                           Grid.RowSpan="2"
+                           Grid.Column="1"
+                           TextWrapping="Wrap"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="{Binding Path=Description}"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="2" 
                            VerticalAlignment="Center" HorizontalAlignment="Center" 

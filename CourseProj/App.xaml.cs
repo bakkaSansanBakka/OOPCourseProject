@@ -33,15 +33,15 @@ namespace CourseProj
             AuthenticationStore authenticationStore = new AuthenticationStore(new AuthenticationService(unitOfWorkFactory));
             NavigationStore navigationStore = new NavigationStore();
 
-            using (var context = new MyContext())
-            {
-                context.Database.EnsureDeleted();
-                context.Database.EnsureCreated();
+            //using (var context = new MyContext())
+            //{
+            //    context.Database.EnsureDeleted();
+            //    context.Database.EnsureCreated();
 
-                authenticationStore.Register("admin", "admin", "admin", "jewelryStore@mail.ru", UserType.Admin);
+            //    authenticationStore.Register("admin", "admin", "admin", "jewelryStore@mail.ru", UserType.Admin);
 
-                context.SaveChanges();
-            }
+            //    context.SaveChanges();
+            //}
 
             navigationStore.CurrentViewModel = new LogInViewModel(navigationStore, authenticationStore, unitOfWorkFactory);
             MainWindow mainWindow = new MainWindow()
