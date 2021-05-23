@@ -40,5 +40,10 @@ namespace CourseProj.MVVM.Views
         {
             ItemsList.SelectedItem = null;
         }
+
+        private void RepairItemsList_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            RepairItemsList.SelectedItem = null;
+        }
     }
 }

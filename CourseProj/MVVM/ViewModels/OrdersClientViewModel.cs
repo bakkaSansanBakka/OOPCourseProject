@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using CourseProj.Core;
 using CourseProj.MVVM.Model;
@@ -18,6 +19,8 @@ namespace CourseProj.MVVM.ViewModels
 
         private IList<JewelryOrder> _jewelryOrdersList;
         private JewelryOrder _selectedItem;
+        private IList<RepairOrder> _repairOrdersList;
+        private RepairOrder _selectedRepairItem;
         private User _user;
 
         public User User
@@ -32,18 +35,37 @@ namespace CourseProj.MVVM.ViewModels
             set => Set(ref _selectedItem, value);
         }
 
+        public RepairOrder SelectedRepairItem
+        {
+            get => _selectedRepairItem;
+            set => Set(ref _selectedRepairItem, value);
+        }
+
         public IList<JewelryOrder> JewelryOrdersList
         {
             get => _jewelryOrdersList;
             set => Set(ref _jewelryOrdersList, value);
         }
 
+        public IList<RepairOrder> RepairOrdersList
+        {
+            get => _repairOrdersList;
+            set => Set(ref _repairOrdersList, value);
+        }
+
         private void LoadJewelryOrders()
         {
             using (var unitOfWork = _unitOfWorkFactory.CreateUnitOfWork())
             {
-                //JewelryItemsList = unitOfWork.OrderRepository.GetAll().Where(p => p.UserId == (unitOfWork.UserRepository.GetUser(User.Id)).Id).ToList();
                 JewelryOrdersList = unitOfWork.OrderRepository.GetAll().Where(p => p.UserId == User.Id).ToList();
+            }
+        }
+
+        private void LoadRepairOrders()
+        {
+            using (var unitOfWork = _unitOfWorkFactory.CreateUnitOfWork())
+            {
+                RepairOrdersList = unitOfWork.RepairOrderRepository.GetAll().Where(p => p.UserId == User.Id).ToList();
             }
         }
 
@@ -51,6 +73,8 @@ namespace CourseProj.MVVM.ViewModels
         public ICommand NavigateToContactsCommand { get; }
         public ICommand NavigateToStoreClientCommand { get; }
         public ICommand NavigateToRepairCommand { get; }
+        public ICommand NavigateToConcreteJewelryOrderCommand { get; }
+        public ICommand NavigateToConcreteRepairOrderCommand { get; }
 
         public OrdersClientViewModel(NavigationStore navigationStore, AuthenticationStore authenticationStore, UnitOfWorkFactory unitOfWorkFactory)
         {
@@ -74,7 +98,32 @@ namespace CourseProj.MVVM.ViewModels
             NavigateToRepairCommand = new NavigateCommand<RepairClientViewModel>(navigationStore, 
                 () => new RepairClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
 
+            NavigateToConcreteJewelryOrderCommand = new NavigateCommand<ConcreteJewelryOrderClientViewModel>(navigationStore,
+                () => new ConcreteJewelryOrderClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory, SelectedItem),
+                (parameter) =>
+                {
+                    if (SelectedItem == null)
+                    {
+                        MessageBox.Show("Заказ не выбран", "Ошибка");
+                        return false;
+                    }
+                    return SelectedItem != null;
+                });
+
+            NavigateToConcreteRepairOrderCommand = new NavigateCommand<ConcreteRepairOrderClientViewModel>(navigationStore,
+                () => new ConcreteRepairOrderClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory, SelectedRepairItem),
+                (parameter) =>
+                {
+                    if (SelectedRepairItem == null)
+                    {
+                        MessageBox.Show("Заказ не выбран", "Ошибка");
+                        return false;
+                    }
+                    return SelectedRepairItem != null;
+                });
+
             LoadJewelryOrders();
+            LoadRepairOrders();
         }
     }
 }

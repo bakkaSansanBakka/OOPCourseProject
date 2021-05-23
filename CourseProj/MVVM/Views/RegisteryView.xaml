@@ -33,7 +33,6 @@
                 Width="120"
                 Grid.Column="0"
                 Grid.Row="0"
-                Margin="10,18,0,17"
                 Command="{Binding NavigateBackCommand}"
                 Style="{StaticResource buttonStyle}"/>
 
@@ -61,7 +60,7 @@
                  Height="40"
                  Width="210"
                  Text="{Binding UserName}"
-                 Style="{StaticResource textBoxStyle}" Margin="60,18,60,17"/>
+                 Style="{StaticResource textBoxStyle}"/>
 
         <TextBlock Text="Электронная почта"
                    TextAlignment="Right"
@@ -87,7 +86,7 @@
                  Height="40"
                  Width="210"
                  Style="{StaticResource textBoxStyle}"
-                 Text="{Binding Email}" Margin="60,17,60,18"/>
+                 Text="{Binding Email}"/>
 
         <Border Grid.Row="4"
                 Grid.Column="2"
@@ -98,7 +97,7 @@
             <uscontr:BindableWatermarkPasswordBox x:Name="PasswordTextBox"
                                               Width="210"
                                               Height="40"
-                                              FontSize="24"
+                                              FontSize="22"
                                               BorderThickness="1"
                                               Foreground="Indigo"
                                          Password="{Binding Password}"/>
@@ -122,7 +121,7 @@
             <uscontr:BindableWatermarkPasswordBox x:Name="ConfirmPasswordTextBox"
                                               Width="210"
                                               Height="40"
-                                              FontSize="24"
+                                              FontSize="22"
                                               BorderThickness="1"
                                               Foreground="Indigo"
                                          Password="{Binding ConfirmPassword}"/>
@@ -130,13 +129,13 @@
         
         <Button Content="Зарегистрироваться"
                 FontSize="22"
-                Height="40"
+                Height="45"
                 Width="240"
                 Grid.Column="1"
                 Grid.Row="6"
                 Grid.ColumnSpan="2"
                 Command="{Binding RegisterUserCommand}"
-                Style="{StaticResource buttonStyle}" Margin="210,18,210,17"/>
+                Style="{StaticResource buttonStyle}"/>
 
     </Grid>
 </UserControl>

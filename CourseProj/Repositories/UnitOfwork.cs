@@ -14,6 +14,7 @@ namespace CourseProj.Repositories
         private JewelryItemRepository _jewelryItemRepository;
         private UserRepository _userRepository;
         private OrderRepository _orderRepository;
+        private RepairOrderRepository _repairOrderRepository;
 
         public UnitOfwork()
         {
@@ -37,6 +38,16 @@ namespace CourseProj.Repositories
                 if (_orderRepository == null)
                     _orderRepository = new OrderRepository(_dbContext);
                 return _orderRepository;
+            }
+        }
+
+        public RepairOrderRepository RepairOrderRepository
+        {
+            get
+            {
+                if (_repairOrderRepository == null)
+                    _repairOrderRepository = new RepairOrderRepository(_dbContext);
+                return _repairOrderRepository;
             }
         }
 

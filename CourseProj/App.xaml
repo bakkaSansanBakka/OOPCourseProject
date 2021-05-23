@@ -64,6 +64,22 @@
                 <view:JewelryItemView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:ConcreteJewelryOrderClientViewModel}">
+                <view:ConcreteJewelryOrderClient/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:ConcreteRepairOrderClientViewModel}">
+                <view:ConcreteRepairOrderClientView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ConcreteJewelryOrderAdminViewModel}">
+                <view:ConcreteJewelryOrderAdminView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ConcreteRepairOrderAdminViewModel}">
+                <view:ConcreteRepairOrderAdminView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

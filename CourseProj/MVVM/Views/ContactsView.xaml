@@ -78,7 +78,8 @@
         <Image Grid.Column="1"
                Grid.Row="1"
                HorizontalAlignment="Center"
-               Margin="10">
+               Margin="10"
+               RenderOptions.BitmapScalingMode="HighQuality">
             <Image.Source>
                 <BitmapImage UriSource="E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\CourseProj\CourseProj\Images\ikonka-telefona-dliya-vizitki-01.png"/>
             </Image.Source>
@@ -97,7 +98,8 @@
         <Image Grid.Column="2"
                Grid.Row="1"
                HorizontalAlignment="Center"
-               Margin="10">
+               Margin="10"
+               RenderOptions.BitmapScalingMode="HighQuality">
             <Image.Source>
                 <BitmapImage UriSource="E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\CourseProj\CourseProj\Images\address--v1.png"/>
             </Image.Source>
@@ -115,13 +117,14 @@
         <Image Grid.Column="3"
                Grid.Row="1"
                HorizontalAlignment="Center"
-               Margin="10">
+               Margin="10"
+               RenderOptions.BitmapScalingMode="HighQuality">
             <Image.Source>
                 <BitmapImage UriSource="E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\CourseProj\CourseProj\Images\w512h5121377939682185078emailmailstreamline.png"/>
             </Image.Source>
         </Image>
 
-        <TextBlock Text="Email: jewelrystore@mail.ru"
+        <TextBlock Text="Email: jewelryStore11@mail.ru"
                    Grid.Column="3"
                    Grid.Row="2"
                    FontSize="22"

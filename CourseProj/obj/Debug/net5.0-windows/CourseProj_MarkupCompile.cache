@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\App.xaml
-262118998301
+30-992893232
 
-62-964120181
+74-467281869
 3681507543677
-Images\ImageResource.xaml;MainWindow.xaml;MVVM\Views\ContactsView.xaml;MVVM\Views\ItemInfoClientView.xaml;MVVM\Views\JewelryItemView.xaml;MVVM\Views\LogInView.xaml;MVVM\Views\OrderClientView.xaml;MVVM\Views\OrdersAdminView.xaml;MVVM\Views\OrdersClientView.xaml;MVVM\Views\RegisteryView.xaml;MVVM\Views\RepairClientView.xaml;MVVM\Views\StoreAdminView.xaml;MVVM\Views\StoreClientView.xaml;Themes\ButtonsThemes.xaml;Themes\CardValidityTextBoxTheme.xaml;Themes\ComboBoxThemes.xaml;Themes\ConverterResources.xaml;Themes\ListViewThemes.xaml;Themes\MenuButtonTheme.xaml;Themes\MenuExitTheme.xaml;Themes\SearchButtonTheme.xaml;Themes\SelectedMenuButtonTheme.xaml;Themes\TextThemes.xaml;UserControls\BindableWatermarkPasswordBox.xaml;UserControls\PasswordTextBox.xaml;UserControls\WatermarkTextBox.xaml;
+Images\ImageResource.xaml;MainWindow.xaml;MVVM\Views\ConcreteJewelryOrderAdminView.xaml;MVVM\Views\ConcreteJewelryOrderClient.xaml;MVVM\Views\ConcreteRepairOrderAdminView.xaml;MVVM\Views\ConcreteRepairOrderClientView.xaml;MVVM\Views\ContactsView.xaml;MVVM\Views\ItemInfoClientView.xaml;MVVM\Views\JewelryItemView.xaml;MVVM\Views\LogInView.xaml;MVVM\Views\OrderClientView.xaml;MVVM\Views\OrdersAdminView.xaml;MVVM\Views\OrdersClientView.xaml;MVVM\Views\RegisteryView.xaml;MVVM\Views\RepairClientView.xaml;MVVM\Views\StoreAdminView.xaml;MVVM\Views\StoreClientView.xaml;Themes\ButtonsThemes.xaml;Themes\CardValidityTextBoxTheme.xaml;Themes\ComboBoxThemes.xaml;Themes\ConverterResources.xaml;Themes\ListViewThemes.xaml;Themes\MenuButtonTheme.xaml;Themes\MenuExitTheme.xaml;Themes\SearchButtonTheme.xaml;Themes\SelectedMenuButtonTheme.xaml;Themes\TextThemes.xaml;UserControls\BindableWatermarkPasswordBox.xaml;UserControls\PasswordTextBox.xaml;UserControls\WatermarkTextBox.xaml;
 
 False
 

@@ -24,5 +24,26 @@ namespace CourseProj.MVVM.Views
         {
             InitializeComponent();
         }
+
+        private void VerticalScrollBar_OnMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ScrollViewer scroll =
+                (sender as ListView).Parent as ScrollViewer;
+
+            if (e.Delta < 0)
+                scroll.LineDown();
+            else
+                scroll.LineUp();
+        }
+
+        private void ItemsList_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            ItemsList.SelectedItem = null;
+        }
+
+        private void RepairItemsList_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            RepairItemsList.SelectedItem = null;
+        }
     }
 }

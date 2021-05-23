@@ -5,4 +5,5 @@
     <conv:AddOrEditConverter x:Key="AddOrEditConverter"/>
     <conv:MaterialConverter x:Key="MaterialConverter"/>
     <conv:DeliveryConverter x:Key="DeliveryConverter"/>
+    <conv:StatusConverter x:Key="StatusConverter"/>
 </ResourceDictionary>

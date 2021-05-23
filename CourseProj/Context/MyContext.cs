@@ -20,6 +20,7 @@ namespace CourseProj.Context
         public DbSet<User> Users { get; set; }
         public DbSet<JewelryItem> JewelryItems { get; set; }
         public DbSet<JewelryOrder> JewelryOrders { get; set; }
+        public DbSet<RepairOrder> RepairOrders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -53,6 +54,16 @@ namespace CourseProj.Context
                .HasForeignKey(pr => pr.UserId)
                .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder
+                .Entity<RepairOrder>()
+                .HasKey(a => a.Id);
+
+            modelBuilder
+               .Entity<RepairOrder>()
+               .HasOne(pr => pr.User)
+               .WithMany(s => s.RepairOrders)
+               .HasForeignKey(pr => pr.UserId)
+               .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

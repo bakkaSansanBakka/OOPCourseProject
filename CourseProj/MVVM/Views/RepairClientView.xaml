@@ -39,7 +39,7 @@
                    FontSize="20"
                    Margin="120,30,0,0"/>
 
-        <Button Content="Магазин"
+        <Button Content="Каталог"
                      Grid.Column="0"
                      Grid.Row="1"
                      FontSize="24"
@@ -76,7 +76,7 @@
 
         <TextBlock Grid.Column="1"
                    Grid.ColumnSpan="2"
-                   Grid.Row="1"
+                   Grid.Row="0"
                    Text="Приобретая ювелирное украшение следует помнить, что оно может поломаться"
                    FontSize="22"
                    TextWrapping="Wrap"
@@ -86,7 +86,7 @@
 
         <TextBlock Grid.Column="1"
                    Grid.ColumnSpan="2"
-                   Grid.Row="2"
+                   Grid.Row="1"
                    Text="Опишите свою проблему и мы постараемся вам помочь"
                    FontSize="20"
                    TextWrapping="Wrap"
@@ -96,7 +96,7 @@
                    Foreground="Indigo"/>
 
         <TextBlock Grid.Column="1"
-                   Grid.Row="3"
+                   Grid.Row="2"
                    Text="Ваше ФИО"
                    VerticalAlignment="Center"
                    FontSize="20"
@@ -105,15 +105,18 @@
                    Foreground="Indigo"/>
 
         <TextBox Grid.Column="2"
-                 Grid.Row="3"
+                 Grid.Row="2"
                  Height="50"
                  Width="260"
                  HorizontalAlignment="Left"
+                 FontSize="20"
                  Margin="40,0,0,0"
+                 Text="{Binding Path=ClientFIO, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
                  Style="{StaticResource textBoxStyle}"/>
 
         <TextBlock Grid.Column="1"
-                   Grid.Row="4"
+                   Grid.Row="3"
                    Text="Описание"
                    VerticalAlignment="Center"
                    FontSize="20"
@@ -122,11 +125,17 @@
                    Foreground="Indigo"/>
 
         <TextBox Grid.Column="2"
-                 Grid.Row="4"
-                 Height="50"
+                 Grid.RowSpan="2"
+                 Grid.Row="3"
+                 TextWrapping="Wrap"
+                 FontSize="20"
+                 VerticalScrollBarVisibility="Visible"
+                 Height="120"
                  Width="260"
                  HorizontalAlignment="Left"
                  Margin="40,0,0,0"
+                 Text="{Binding Path=Description, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
                  Style="{StaticResource textBoxStyle}"/>
 
         <Button Content="Картинка"
@@ -135,21 +144,30 @@
                 Height="45"
                 Width="180"
                 FontSize="20"
-                Style="{StaticResource buttonStyle}"/>
+                HorizontalAlignment="Right"
+                Margin="0,0,40,0"
+                Style="{StaticResource buttonStyle}" 
+                Click="ImageDownloadButton_OnClick"/>
 
-        <TextBlock Grid.Column="2"
-                   Grid.Row="5"
-                   TextWrapping="Wrap"
-                   FontSize="20"
-                   Style="{StaticResource textBlockStyle}"/>
+        <Image x:Name="Img"
+               Grid.Column="2"
+               Grid.Row="5"
+               Grid.RowSpan="2"
+               Margin="40,0,0,0"
+               HorizontalAlignment="Left"
+               Width="260"
+               RenderOptions.BitmapScalingMode="HighQuality"
+               Stretch="Fill"
+               Source="{Binding Image, Mode=TwoWay}"/>
 
         <Button Content="Оформить заявку"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                Grid.Row="6"
+                Grid.Row="7"
                 Height="45"
                 Width="190"
                 FontSize="20"
+                Command="{Binding AddRepairOrderCommand}"
                 Style="{StaticResource buttonStyle}"/>
 
     </Grid>

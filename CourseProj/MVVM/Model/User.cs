@@ -24,6 +24,7 @@ namespace CourseProj.MVVM.Model
         public string Email { get; set; }
         public UserType UserType { get; set; }
         public IList<JewelryOrder> JewelryOrders { get; set; }
+        public IList<RepairOrder> RepairOrders { get; set; }
 
         public User() { }
 

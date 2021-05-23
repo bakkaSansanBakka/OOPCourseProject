@@ -7,6 +7,18 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MVVM\Views\ConcreteJewelryOrderAdminView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\ConcreteJewelryOrderClient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\ConcreteRepairOrderAdminView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\ConcreteRepairOrderClientView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\Views\ContactsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +67,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\ConcreteJewelryOrderAdminView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\ConcreteJewelryOrderClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\ConcreteRepairOrderAdminView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\ConcreteRepairOrderClientView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\ContactsView.xaml">

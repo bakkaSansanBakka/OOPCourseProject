@@ -403,3 +403,11 @@ E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject
 E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\JewelryItemView.baml
 E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\Themes\ConverterResources.baml
 E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\Themes\ListViewThemes.baml
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\ConcreteJewelryOrderClient.g.cs
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\ConcreteJewelryOrderClient.baml
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\ConcreteRepairOrderClientView.g.cs
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\ConcreteRepairOrderClientView.baml
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\ConcreteJewelryOrderAdminView.g.cs
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\ConcreteJewelryOrderAdminView.baml
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\ConcreteRepairOrderAdminView.g.cs
+E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\obj\Debug\net5.0-windows\MVVM\Views\ConcreteRepairOrderAdminView.baml

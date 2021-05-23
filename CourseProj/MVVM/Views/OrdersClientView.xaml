@@ -39,7 +39,7 @@
                    FontSize="20"
                    Margin="120,30,0,0"/>
 
-        <Button Content="Магазин"
+        <Button Content="Каталог"
                      Grid.Column="0"
                      Grid.Row="1"
                      FontSize="24"
@@ -74,9 +74,26 @@
                 Style="{StaticResource MenuExitTheme}" 
                 Command="{Binding NavigateToExitCommand}"/>
 
+        <TextBlock Grid.Column="1"
+                   Text="Заказы изделий"
+                   FontSize="26"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="20,0,20,0"
+                   Foreground="Indigo"/>
+
+        <TextBlock Grid.Column="2"
+                   Text="Заказы на починку"
+                   FontSize="26"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="20,0,20,0"
+                   Foreground="Indigo"/>
+
         <ScrollViewer x:Name="ScrollBar"
                       Grid.Column="1"
-                      Grid.RowSpan="8"
+                      Grid.Row="1"
+                      Grid.RowSpan="7"
                       VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Hidden"
                       Margin="10">
@@ -91,6 +108,29 @@
                 <ListView.Resources>
                     <Style TargetType="ListViewItem">
                         <Setter Property="Template" Value="{StaticResource JewelryOrdersListViewTemplate}"/>
+                    </Style>
+                </ListView.Resources>
+            </ListView>
+        </ScrollViewer>
+
+        <ScrollViewer x:Name="ScrollBarNew"
+                      Grid.Column="2"
+                      Grid.Row="1"
+                      Grid.RowSpan="7"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Hidden"
+                      Margin="10">
+            <ListView Background="LavenderBlush"
+                      x:Name="RepairItemsList"
+                      ItemsSource="{Binding Path=RepairOrdersList}"
+                      HorizontalContentAlignment="Stretch"
+                      BorderThickness="0"
+                      SelectedItem="{Binding SelectedRepairItem, Mode=TwoWay}" 
+                      PreviewMouseWheel="VerticalScrollBar_OnMouseWheel" 
+                      LostFocus="RepairItemsList_OnLostFocus">
+                <ListView.Resources>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Template" Value="{StaticResource RepairOrdersListViewTemplate}"/>
                     </Style>
                 </ListView.Resources>
             </ListView>

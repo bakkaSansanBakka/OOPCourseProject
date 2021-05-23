@@ -190,20 +190,231 @@
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            FontSize="11"
-                           Text="{Binding Path=JewelryItem.Price}"/>
+                           Text="{Binding StringFormat={}{0} руб, Path=JewelryItem.Price}"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="2" 
                            VerticalAlignment="Center" HorizontalAlignment="Left" 
                            FontSize="11" 
-                           Text="{Binding Path=Status}"/>
+                           Text="{Binding Path=Status, Converter={StaticResource StatusConverter}}"/>
 
             </Grid>
-            <!--<Border.InputBindings>
+            <Border.InputBindings>
                 <MouseBinding MouseAction="LeftDoubleClick" 
-                              Command="{Binding DataContext.NavigateToItemInfoCommand, 
+                              Command="{Binding DataContext.NavigateToConcreteJewelryOrderCommand, 
                                         RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
                               CommandParameter="{Binding}"/>
-            </Border.InputBindings>-->
+            </Border.InputBindings>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter TargetName="Border" Property="BorderThickness" Value="3"/>
+                <Setter TargetName="Border" Property="Background" Value="DarkOrchid"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="Background" Value="DarkOrchid"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="RepairOrdersListViewTemplate"
+                     TargetType="ListViewItem">
+        <Border Name="Border"
+                BorderBrush="Indigo"
+                BorderThickness="1"
+                Padding="10"
+                HorizontalAlignment="Stretch"
+                Background="LavenderBlush"
+                Height="150">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0"
+                       Grid.RowSpan="3"
+                       Grid.Column="0"
+                       Width="110"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,5,0"
+                       Stretch="Fill"
+                       Source="{Binding Image}"
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
+
+                <TextBlock Grid.Column="1"
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           FontSize="11"
+                           Text="{Binding Path=ClientFIO}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="1" 
+                           VerticalAlignment="Center" HorizontalAlignment="Left" 
+                           FontSize="11" 
+                           Text="{Binding Path=Status, Converter={StaticResource StatusConverter}}"/>
+
+            </Grid>
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick" 
+                              Command="{Binding DataContext.NavigateToConcreteRepairOrderCommand, 
+                                        RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
+                              CommandParameter="{Binding}"/>
+            </Border.InputBindings>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter TargetName="Border" Property="BorderThickness" Value="3"/>
+                <Setter TargetName="Border" Property="Background" Value="DarkOrchid"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="Background" Value="DarkOrchid"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="JewelryOrdersListViewTemplateAdmin"
+                     TargetType="ListViewItem">
+        <Border Name="Border"
+                BorderBrush="Indigo"
+                BorderThickness="1"
+                Padding="10"
+                HorizontalAlignment="Stretch"
+                Background="LavenderBlush"
+                Height="150">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0"
+                       Grid.RowSpan="4"
+                       Grid.Column="0"
+                       Width="110"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,5,0"
+                       Stretch="Fill"
+                       Source="{Binding JewelryItem.Image}"
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
+
+                <TextBlock Grid.Column="1"
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           FontSize="11"
+                           Text="{Binding Path=JewelryItem.JewelryName}"/>
+
+                <TextBlock Grid.Column="1"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="11"
+                           Text="{Binding Path=ClientFIO}"/>
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="1"
+                           TextWrapping="Wrap"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="11"
+                           Text="{Binding StringFormat={}{0} руб, Path=JewelryItem.Price}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="1" 
+                           VerticalAlignment="Center" HorizontalAlignment="Left" 
+                           FontSize="11" 
+                           Text="{Binding Path=Status, Converter={StaticResource StatusConverter}}"/>
+
+            </Grid>
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick" 
+                              Command="{Binding DataContext.NavigateToConcreteJewelryOrderCommand, 
+                                        RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
+                              CommandParameter="{Binding}"/>
+            </Border.InputBindings>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter TargetName="Border" Property="BorderThickness" Value="3"/>
+                <Setter TargetName="Border" Property="Background" Value="DarkOrchid"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="Background" Value="DarkOrchid"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="RepairOrdersListViewAdminTemplate"
+                     TargetType="ListViewItem">
+        <Border Name="Border"
+                BorderBrush="Indigo"
+                BorderThickness="1"
+                Padding="10"
+                HorizontalAlignment="Stretch"
+                Background="LavenderBlush"
+                Height="150">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0"
+                       Grid.RowSpan="3"
+                       Grid.Column="0"
+                       Width="110"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,5,0"
+                       Stretch="Fill"
+                       Source="{Binding Image}"
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
+
+                <TextBlock Grid.Column="1"
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           FontSize="11"
+                           Text="{Binding Path=ClientFIO}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="1" 
+                           VerticalAlignment="Center" HorizontalAlignment="Left" 
+                           FontSize="11" 
+                           Text="{Binding Path=Status, Converter={StaticResource StatusConverter}}"/>
+
+            </Grid>
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick" 
+                              Command="{Binding DataContext.NavigateToConcreteRepairOrderCommand, 
+                                        RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
+                              CommandParameter="{Binding}"/>
+            </Border.InputBindings>
         </Border>
 
         <ControlTemplate.Triggers>
