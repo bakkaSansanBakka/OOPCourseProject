@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="450*"/>
+            <ColumnDefinition Width="480*"/>
             <ColumnDefinition Width="230*"/>
         </Grid.ColumnDefinitions>
 
@@ -90,30 +90,14 @@
 
                 <TextBox Width="140"
                      FontSize="20"
-                         Margin="10"
+                         Margin="5"
                      BorderThickness="0" 
                      Text="{Binding SearchExpression, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                      HorizontalAlignment="Center" 
                      VerticalAlignment="Center"/>
             </StackPanel>
-            
+
         </Border>
-
-        <Button Content="О товаре"
-                Grid.Column="2"
-                Grid.ColumnSpan="2"
-                Grid.Row="1"
-                Height="45"
-                Width="190"
-                FontSize="20"
-                Style="{StaticResource buttonStyle}">
-
-            <Button.InputBindings>
-                <MouseBinding MouseAction="LeftClick"
-                              Command="{Binding NavigateToItemInfoCommand}"
-                              CommandParameter="{Binding SelectedItem}"/>
-            </Button.InputBindings>
-        </Button>
 
         <ScrollViewer x:Name="ScrollBar"
                       Grid.Column="1"

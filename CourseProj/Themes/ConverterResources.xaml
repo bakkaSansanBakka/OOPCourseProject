@@ -3,4 +3,6 @@
                     xmlns:local="clr-namespace:CourseProj.Themes"
                     xmlns:conv="clr-namespace:CourseProj.Core.Converters">
     <conv:AddOrEditConverter x:Key="AddOrEditConverter"/>
+    <conv:MaterialConverter x:Key="MaterialConverter"/>
+    <conv:DeliveryConverter x:Key="DeliveryConverter"/>
 </ResourceDictionary>

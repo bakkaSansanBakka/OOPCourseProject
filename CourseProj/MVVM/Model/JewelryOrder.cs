@@ -29,6 +29,14 @@ namespace CourseProj.MVVM.Model
         Gold
     }
 
+    public enum DeliveryType
+    {
+        [Display(Name = "Самовывоз")]
+        Pickup = 1,
+        [Display(Name = "Почта")]
+        Mail
+    }
+
     public class JewelryOrder : Item
     {
         public OrderStatus Status { get; set; }
@@ -37,29 +45,26 @@ namespace CourseProj.MVVM.Model
         public string Address { get; set; }
         public float TotalPrice { get; set; }
         public JewelryItemMaterial Material { get; set; }
-        public int CardNum { get; set; }
-        public int CardMonth { get; set; }
-        public int CardYear { get; set; }
+        public DeliveryType Delivery { get; set; }
+        public long CardNum { get; set; }
+        public string CardMonth { get; set; }
+        public string CardYear { get; set; }
 
         public int JewelryItemId { get; set; }
         public JewelryItem JewelryItem { get; set; }
-
-        public int DeliveryId { get; set; }
-        public Delivery Delivery { get; set; }
 
         public int UserId { get; set; }
         public User User { get; set; }
 
         public JewelryOrder() { }
 
-        public JewelryOrder(int id, string clientFIO, string phone, string address, string comment, OrderStatus status,
-            JewelryItemMaterial material, int cardNum, int cardMonth, int cardYear) : base(id)
+        public JewelryOrder(int id, string clientFIO, string phone, string address, OrderStatus status,
+            JewelryItemMaterial material, int cardNum, string cardMonth, string cardYear) : base(id)
         {
             ClientFIO = clientFIO;
             Phone = phone;
             Address = address;
             Status = status;
-            TotalPrice = JewelryItem.Price + Delivery.Price;
             Material = material;
             CardNum = cardNum;
             CardMonth = cardMonth;

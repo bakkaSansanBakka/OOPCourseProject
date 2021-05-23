@@ -29,9 +29,19 @@ namespace CourseProj.Repositories
             return await db.Users.FindAsync(id);
         }
 
+        public  User GetUser(int id)
+        {
+            return db.Users.First(j => j.Id == id);
+        }
+
         public Task<User> GetByUserName(string userName)
         {
             return db.Users.FirstOrDefaultAsync(p => p.UserName == userName);
+        }
+
+        public User GetUserByName(string userName)
+        {
+            return db.Users.First(p => p.UserName == userName);
         }
 
         public void Create(User item)

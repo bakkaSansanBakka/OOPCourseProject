@@ -11,7 +11,6 @@ namespace CourseProj.Repositories
     {
         private readonly MyContext _dbContext;
 
-        private DeliveryRepository _deliveryRepository;
         private JewelryItemRepository _jewelryItemRepository;
         private UserRepository _userRepository;
         private OrderRepository _orderRepository;
@@ -19,16 +18,6 @@ namespace CourseProj.Repositories
         public UnitOfwork()
         {
             _dbContext = new MyContext();
-        }
-
-        public DeliveryRepository DeliveryRepository
-        {
-            get
-            {
-                if (_deliveryRepository == null)
-                    _deliveryRepository = new DeliveryRepository(_dbContext);
-                return _deliveryRepository;
-            }
         }
 
         public JewelryItemRepository JewelryItemRepository

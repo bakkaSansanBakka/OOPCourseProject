@@ -116,7 +116,7 @@
                    Margin="20,0,20,0"
                    Foreground="Indigo"/>
 
-        <TextBlock Text="{Binding StringFormat={}{0} руб, Path=Price}"
+        <TextBlock Text="{Binding StringFormat={}{0} руб., Path=Price}"
                    Grid.Column="2"
                    Grid.Row="5"
                    FontSize="22"

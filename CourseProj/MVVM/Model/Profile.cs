@@ -8,10 +8,12 @@ namespace CourseProj.MVVM.Model
 {
     public class Profile
     {
-        public Profile(UserType userType)
+        public Profile(string userName, UserType userType)
         {
+            UserName = userName;
             UserType = userType;
         }
         public UserType UserType { get; }
+        public string UserName { get; }
     }
 }

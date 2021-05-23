@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,24 @@ namespace CourseProj.MVVM.Views
         public OrderClientView()
         {
             InitializeComponent();
+        }
+
+        private void CardNumberValidation(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("^[0-9]{0,16}$");
+            e.Handled = !regex.IsMatch(((TextBox)sender).Text + e.Text);
+        }
+
+        private void CardMonthValidation(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex(@"[0-1]?[1-9]?");
+            e.Handled = !regex.IsMatch(((TextBox)sender).Text + e.Text);
+        }
+
+        private void CardYearValidation(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex(@"^\d\d\d\d$");
+            e.Handled = !regex.IsMatch(((TextBox)sender).Text + e.Text);
         }
     }
 }

@@ -44,7 +44,7 @@ namespace CourseProj.Core
                 else
                     return null;
 
-                return new Profile(loginUser.UserType);
+                return new Profile(loginUser.UserName, loginUser.UserType);
             }
         }
 

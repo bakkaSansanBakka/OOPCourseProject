@@ -10,6 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -72,5 +73,27 @@
                 Grid.Row="7"
                 Style="{StaticResource MenuExitTheme}" 
                 Command="{Binding NavigateToExitCommand}"/>
+
+        <ScrollViewer x:Name="ScrollBar"
+                      Grid.Column="1"
+                      Grid.RowSpan="8"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Hidden"
+                      Margin="10">
+            <ListView Background="LavenderBlush"
+                      x:Name="ItemsList"
+                      ItemsSource="{Binding Path=JewelryOrdersList}"
+                      HorizontalContentAlignment="Stretch"
+                      BorderThickness="0"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                      PreviewMouseWheel="VerticalScrollBar_OnMouseWheel" 
+                      LostFocus="ItemsList_OnLostFocus">
+                <ListView.Resources>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Template" Value="{StaticResource JewelryOrdersListViewTemplate}"/>
+                    </Style>
+                </ListView.Resources>
+            </ListView>
+        </ScrollViewer>
     </Grid>
 </UserControl>

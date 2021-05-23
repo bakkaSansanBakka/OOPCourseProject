@@ -20,15 +20,13 @@ namespace CourseProj.Repositories
         }
         public IEnumerable<JewelryOrder> GetAll()
         {
-            return db.JewelryOrders.Include(p => p.Delivery)
-                .Include(c => c.JewelryItem)
+            return db.JewelryOrders.Include(c => c.JewelryItem)
                 .Include(b => b.User);
         }
 
         public JewelryOrder Get(int id)
         {
-            return db.JewelryOrders.Include(p => p.Delivery)
-                .Include(c => c.JewelryItem)
+            return db.JewelryOrders.Include(c => c.JewelryItem)
                 .Include(b => b.User).First(i => i.Id == id);
         }
 

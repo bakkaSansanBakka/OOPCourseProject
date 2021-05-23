@@ -78,8 +78,8 @@ namespace CourseProj.MVVM.ViewModels
             NavigateToRepairCommand = new NavigateCommand<RepairClientViewModel>(navigationStore, 
                 () => new RepairClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
 
-            NavigateToOrderClientCommand = new NavigateCommand<OrderClientViewModel>(navigationStore, 
-                () => new OrderClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory));
+            NavigateToOrderClientCommand = new NavigateCommand<OrderClientViewModel>(navigationStore,
+                () => new OrderClientViewModel(navigationStore, authenticationStore, unitOfWorkFactory, _item));
         }
     }
 }
