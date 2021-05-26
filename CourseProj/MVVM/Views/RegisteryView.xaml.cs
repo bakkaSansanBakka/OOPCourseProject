@@ -24,5 +24,14 @@ namespace CourseProj.MVVM.Views
         {
             InitializeComponent();
         }
+
+        private void PasswordTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (PasswordTextBox.Password.Length < 5)
+            {
+                MessageBox.Show("Слишком короткий пароль", "Предупреждение");
+                PasswordTextBox.Password = "";
+            }
+        }
     }
 }

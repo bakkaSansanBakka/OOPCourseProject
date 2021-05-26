@@ -43,5 +43,31 @@ namespace CourseProj.MVVM.Views
             Regex regex = new Regex(@"^\d\d\d\d$");
             e.Handled = !regex.IsMatch(((TextBox)sender).Text + e.Text);
         }
+
+        private void PhoneTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (PhoneTextBox.Text.Length < 11)
+            {
+                MessageBox.Show("Слишком короткий номер телефона\nПроверьте правильность ввода", "Предупреждение");
+            }
+        }
+
+        private void CardMonthTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (CardMonthTextBox.Text.Length < 2)
+            {
+                MessageBox.Show("Поле должно содержать две цифры\nПроверьте правильность ввода", "Предупреждение");
+                CardMonthTextBox.Text = "06";
+            }
+        }
+
+        private void CardYearTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (CardYearTextBox.Text.Length < 2)
+            {
+                MessageBox.Show("Поле должно содержать две цифры\nПроверьте правильность ввода", "Предупреждение");
+                CardYearTextBox.Text = "21";
+            }
+        }
     }
 }

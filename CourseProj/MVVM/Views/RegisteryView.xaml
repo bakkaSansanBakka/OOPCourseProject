@@ -100,7 +100,7 @@
                                               FontSize="22"
                                               BorderThickness="1"
                                               Foreground="Indigo"
-                                         Password="{Binding Password}"/>
+                                         Password="{Binding Password}" LostFocus="PasswordTextBox_OnLostFocus"/>
         </Border>
 
         <TextBlock Text="Повторите пароль"

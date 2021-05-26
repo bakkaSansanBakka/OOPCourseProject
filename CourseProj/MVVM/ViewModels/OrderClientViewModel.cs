@@ -127,7 +127,7 @@ namespace CourseProj.MVVM.ViewModels
 
         public OrderClientViewModel(NavigationStore navigationStore, AuthenticationStore authenticationStore, UnitOfWorkFactory unitOfWorkFactory,
             JewelryItem item, string clientFIO = "", string phone = "", string address = "", long cardNum = 0, string cardMonth = "01", 
-            string cardYear = "2021")
+            string cardYear = "21")
         {
             _navigationStore = navigationStore;
             _authenticationStore = authenticationStore;

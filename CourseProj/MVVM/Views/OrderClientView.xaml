@@ -136,15 +136,17 @@
                        Foreground="Indigo"/>
             
             <TextBox Grid.Column="1"
+                     x:Name="PhoneTextBox"
                      Grid.Row="2"
                      Height="40"
                      Width="260"
+                     MaxLength="13"
                      HorizontalAlignment="Left"
                      Margin="30,0,0,0"
                      FontSize="20"
                      Text="{Binding Path=Phone, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                     Style="{StaticResource textBoxStyle}"/>
+                     Style="{StaticResource textBoxStyle}" LostFocus="PhoneTextBox_OnLostFocus"/>
 
             <TextBlock Text="Ваш адрес"
                        Grid.Column="0"
@@ -244,12 +246,15 @@
                         Orientation="Horizontal">
                 <TextBox  Height="40"
                           Width="100"
+                          x:Name="CardMonthTextBox"
                           Margin="30,0,0,0"
                           FontSize="20"
+                          MaxLength="2"
+                          ToolTip="Месяц: 2 цифры"
                           Text="{Binding Path=CardMonth, Mode=TwoWay,
                             UpdateSourceTrigger=PropertyChanged}"
                           PreviewTextInput="CardMonthValidation"
-                          Style="{StaticResource textBoxStyle}"/>
+                          Style="{StaticResource textBoxStyle}" LostFocus="CardMonthTextBox_OnLostFocus"/>
 
                 <TextBlock Text="/"
                            FontSize="28"
@@ -262,10 +267,13 @@
                 <TextBox Height="40"
                          Width="100"
                          FontSize="20"
+                         x:Name="CardYearTextBox"
                          Margin="20,0,0,0"
+                         MaxLength="2"
+                         ToolTip="Год: 2 цифры"
                          Text="{Binding Path=CardYear, Mode=TwoWay,
                             UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource textBoxStyle}"/>
+                         Style="{StaticResource textBoxStyle}" LostFocus="CardYearTextBox_OnLostFocus"/>
             </StackPanel>
             
 
