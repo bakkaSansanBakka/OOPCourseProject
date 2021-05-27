@@ -81,12 +81,14 @@
                    Style="{StaticResource textBlockStyle}"/>
 
         <TextBox FontSize="24"
+                 x:Name="MailTextBox"
                  Grid.Column="2"
                  Grid.Row="3"
                  Height="40"
                  Width="210"
                  Style="{StaticResource textBoxStyle}"
-                 Text="{Binding Email}"/>
+                 Text="{Binding Email}" LostFocus="MailTextBox_OnLostFocus" 
+                 />
 
         <Border Grid.Row="4"
                 Grid.Column="2"
@@ -95,12 +97,13 @@
                 Width="210"
                 Height="40">
             <uscontr:BindableWatermarkPasswordBox x:Name="PasswordTextBox"
-                                              Width="210"
-                                              Height="40"
-                                              FontSize="22"
-                                              BorderThickness="1"
-                                              Foreground="Indigo"
-                                         Password="{Binding Password}" LostFocus="PasswordTextBox_OnLostFocus"/>
+                                                  Width="210"
+                                                  Height="40"
+                                                  FontSize="22"
+                                                  BorderThickness="1"
+                                                  Foreground="Indigo"
+                                                  Password="{Binding Password}" 
+                                                  LostFocus="PasswordTextBox_OnLostFocus"/>
         </Border>
 
         <TextBlock Text="Повторите пароль"

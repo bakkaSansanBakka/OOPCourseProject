@@ -25,20 +25,11 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Image HorizontalAlignment="Left"
-               Margin="10">
+        <Image RenderOptions.BitmapScalingMode="HighQuality">
             <Image.Source>
-                <BitmapImage UriSource="E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\CourseProj\CourseProj\Images\icons8-обручальные-кольца-24.png"/>
+                <BitmapImage UriSource="E:\2 курс\2 семестр\OOP 2\курсач\CourseProject\OOPCourseProject\CourseProj\Images\JewelryLogo1.png"/>
             </Image.Source>
         </Image>
-
-        <TextBlock Text="Ювелирная"
-                   FontSize="20"
-                   Margin="70,10,0,0"/>
-
-        <TextBlock Text="Мастерская"
-                   FontSize="20"
-                   Margin="120,30,0,0"/>
 
         <Button Content="Каталог"
                      Grid.Column="0"
