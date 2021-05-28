@@ -7,7 +7,8 @@
         xmlns:viewModel="clr-namespace:CourseProj.MVVM.ViewModels"
         mc:Ignorable="d" 
         MinHeight="600" MinWidth="920"
-        Background="LavenderBlush">
+        Background="LavenderBlush"
+        Title="Jewelry App">
     
     <Grid>
         <ContentControl Content="{Binding CurrentViewModel}"/>

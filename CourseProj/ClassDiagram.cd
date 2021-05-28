@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CourseProj.MVVM.Model.Base.Item">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>MVVM\Model\Base\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProj.MVVM.Model.JewelryItem">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAgAAAAAAAAAAQAAAAAABAAAAAAgAAAAAA=</HashCode>
+      <FileName>MVVM\Model\JewelryItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProj.MVVM.Model.JewelryOrder">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEABIAAEAAAAAAAAIgAAAAgIgEAAQAACQAAAIAAAAAg=</HashCode>
+      <FileName>MVVM\Model\JewelryOrder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="Material" />
+      <Property Name="Delivery" />
+      <Property Name="JewelryItem" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseProj.MVVM.Model.Profile">
+    <Position X="10.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAA=</HashCode>
+      <FileName>MVVM\Model\Profile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseProj.MVVM.Model.RepairOrder">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEAAAgAAAAIAAAAAgIgAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\Model\RepairOrder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseProj.MVVM.Model.User">
+    <Position X="1" Y="4" Width="1.5" />
+    <AssociationLine Name="JewelryOrders" Type="System.Collections.Generic.IList&lt;T&gt;">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.309" Y="0.06" Height="0.182" Width="1.142" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAACAAAAAAAAAAAAQgAAAACgAAAQAAAAAAAAA=</HashCode>
+      <FileName>MVVM\Model\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserType" />
+      <Property Name="JewelryOrders" />
+      <Property Name="RepairOrders" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseProj.Core.EnumExtension">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\EnumExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="System.Collections.Generic.IList&lt;T&gt;" Collapsed="true">
+    <Position X="1.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="CourseProj.MVVM.Model.OrderStatus">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>MVVM\Model\JewelryOrder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CourseProj.MVVM.Model.JewelryItemMaterial">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>MVVM\Model\JewelryOrder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CourseProj.MVVM.Model.DeliveryType">
+    <Position X="12.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>MVVM\Model\JewelryOrder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CourseProj.MVVM.Model.UserType">
+    <Position X="2" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>MVVM\Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

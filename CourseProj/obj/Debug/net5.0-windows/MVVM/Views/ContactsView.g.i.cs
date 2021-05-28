@@ -53,7 +53,7 @@ namespace CourseProj.MVVM.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CourseProj;V1.0.0.0;component/mvvm/views/contactsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CourseProj;component/mvvm/views/contactsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\Views\ContactsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
